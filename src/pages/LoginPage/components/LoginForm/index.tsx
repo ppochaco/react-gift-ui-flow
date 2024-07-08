@@ -6,23 +6,21 @@ import { Input } from '@/components/ui/Input';
 import { buttonStyle, formContainerStyle } from './styles';
 
 export const LoginForm = () => {
-  const { username, password, handleLogin, handleInputChange } = useLoginForm();
+  const { usernameRef, passwordRef, handleLogin } = useLoginForm();
 
   return (
     <form onSubmit={handleLogin} css={formContainerStyle}>
       <Input
         type="text"
         name="username"
-        value={username}
-        onChange={handleInputChange}
+        ref={usernameRef}
         size="response"
         placeholder="이름"
       />
       <Input
         type="password"
         name="password"
-        value={password}
-        onChange={handleInputChange}
+        ref={passwordRef}
         size="response"
         placeholder="비밀번호"
       />
